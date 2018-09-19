@@ -1,0 +1,20 @@
+<!-- <h2 mat-dialog-title></h2> -->
+<mat-dialog-content>
+  <span *ngIf="data.fake == 'false'">
+      <h1 style="text-align:center;"> <mat-icon style="color:red;">error</mat-icon>FAKE !!</h1>
+  <h3>{{data.news}} is probably not is reliable news</h3>
+  </span>
+
+  <span *ngIf="data.fake == 'true'">
+      <h1 style="text-align:center;"><mat-icon style="color:lawngreen;">check_box</mat-icon>REAL !!</h1>
+  <h3>{{data.news}} is probably is reliable news</h3>
+  </span>
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions>
+
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <!-- <button mat-button [mat-dialog-close]="true">Yes</button> -->
+</mat-dialog-actions>

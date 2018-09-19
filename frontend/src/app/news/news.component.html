@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+      <mat-card-title>
+          <h3 style="text-align:center">Detect Fake News</h3>
+      </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+      <form>
+          <mat-form-field style="width: 100%">
+              <textarea [(ngModel)]="postNews" name="description" matInput placeholder="Add News"></textarea>
+          </mat-form-field>
+          <br>
+          <button (click)="post()" mat-raised-button color="primary">Check News</button>
+      </form>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card *ngFor="let message of apiService.news.slice().reverse()">
+   
+        <mat-card-header>
+                <mat-card-title>
+                        <span><h3><mat-icon *ngIf="message.fake == 'false'" style="color:red">thumb_down</mat-icon>
+                            <mat-icon *ngIf="message.fake == 'true'" style="color:green">thumb_up</mat-icon>
+                  {{message.news }}</h3></span>
+                </mat-card-title>
+              </mat-card-header>
+
+              <!-- <mat-card-content>
+                    <p>{{ message.fake }}</p>
+                  </mat-card-content> -->
+                  <mat-divider></mat-divider>
+    <!-- <mat-card>{{message.news}}</mat-card>
+   <p> {{message.fake}} </p> -->
+  </mat-card>

@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<mat-toolbar>
+  <button mat-button routerLink="/">Fake News Detection</button>
+  <span class="example-spacer"></span>
+  <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/register">Register</button>
+  <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/login">Login</button>
+  <button mat-button *ngIf="authService.isAuthenticated" (click)="authService.logout()">Logout</button>
+</mat-toolbar>
+<router-outlet></router-outlet>
